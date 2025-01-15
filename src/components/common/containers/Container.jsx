@@ -1,18 +1,22 @@
 import styled from 'styled-components';
+import { boxShadowLg } from '../../../styles/mixins';
 
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
-  width: 100%;
+  width: ${({ width }) => (width ? width : '100%')};
   padding: 1em;
   background-color: ${({ theme }) => theme.background};
-  border: 1px solid ${({ theme }) => theme.primary};
-  box-shadow: 0 0 8px ${({ theme }) => theme.primary};
+  ${boxShadowLg}
 `;
 
-function Container({ children, ...props }) {
-  return <StyledContainer {...props}>{children}</StyledContainer>;
+function Container({ children, width = null, ...props }) {
+  return (
+    <StyledContainer width={width} {...props}>
+      {children}
+    </StyledContainer>
+  );
 }
 
 export default Container;

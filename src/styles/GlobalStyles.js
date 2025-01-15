@@ -16,6 +16,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border-radius: 0.2em;
   }
 
   html {
@@ -95,6 +96,10 @@ export const GlobalStyles = styled.createGlobalStyle`
     color: ${({ theme }) => theme.primary};
     ${boxShadowLg}
   }
+  label {
+    font-size: inherit;
+    color: ${({ theme }) => theme.secondary};
+  }
 
   ul,
   ol {
@@ -113,8 +118,11 @@ export const GlobalStyles = styled.createGlobalStyle`
     color: ${({ theme }) => theme.secondary};
   }
   h1 {
+    padding: 0.5em 0.5em 0.2em 0;
     font-weight: 400;
     font-style: italic;
+    border-right: 1px solid ${({ theme }) => theme.light};
+    border-radius: 0;
   }
   h2 {
     font-weight: 200;

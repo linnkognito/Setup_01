@@ -8,6 +8,7 @@ import Header from './components/layout/Header';
 import { useSelector } from 'react-redux';
 import Main from './components/layout/Main';
 import Input from './components/common/Input';
+import Spinner from './components/common/Spinner';
 
 function App() {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
@@ -19,10 +20,10 @@ function App() {
       <Main>
         <Container>
           <Input placeholder='Search...' />
+          <Spinner />
         </Container>
       </Main>
     </ThemeProvider>
   );
 }
-
 export default App;

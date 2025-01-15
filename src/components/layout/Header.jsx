@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { bottomShadowLg } from '../../styles/mixins';
 
 import NavBar from './NavBar';
 
@@ -7,8 +8,8 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.5em;
-  padding: 1em 4em;
-  border-bottom: 1px solid ${({ theme }) => theme.primary};
+  padding: 0 4em;
+  ${bottomShadowLg}
 `;
 
 function Header() {
