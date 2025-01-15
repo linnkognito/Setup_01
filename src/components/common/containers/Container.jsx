@@ -1,12 +1,18 @@
 import styled from 'styled-components';
-import { container } from '../../../styles/mixins';
 
 const StyledContainer = styled.div`
-  ${container}
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  padding: 1em;
+  background-color: ${({ theme }) => theme.background};
+  border: 1px solid ${({ theme }) => theme.primary};
+  box-shadow: 0 0 8px ${({ theme }) => theme.primary};
 `;
 
-function Container({ children, className = '' }) {
-  return <StyledContainer className={className}>{children}</StyledContainer>;
+function Container({ children, ...props }) {
+  return <StyledContainer {...props}>{children}</StyledContainer>;
 }
 
 export default Container;

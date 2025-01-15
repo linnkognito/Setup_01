@@ -1,5 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import { boxShadowSm, boxShadowLg, marginBase } from './mixins';
+import {
+  boxShadowSm,
+  boxShadowLg,
+  marginBase,
+  boxShadowLgBorder,
+  boxShadowSmBorder,
+} from './mixins';
 
 const styled = { createGlobalStyle };
 
@@ -53,7 +59,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     background: ${({ theme }) => theme.background};
     border: 1px solid ${({ theme }) => theme.primary};
     border-radius: 0.2em;
-    ${boxShadowSm}
+    ${boxShadowSmBorder}
     cursor: pointer;
     transition: transform 0.3s ease;
   }
@@ -63,14 +69,31 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
   button:focus {
     outline: none;
-    ${boxShadowLg}
+    ${boxShadowLgBorder}
   }
 
   input,
   textarea {
+    width: fit-content;
+    padding: 0.2em 0.3em;
     font-family: inherit;
     font-size: inherit;
-    color: inherit;
+    color: ${({ theme }) => theme.secondary};
+    background-color: ${({ theme }) => theme.highlight};
+    outline: none;
+    border: none;
+    border-radius: 0.1em;
+    ${boxShadowSm}
+  }
+  input::placeholder {
+    color: ${({ theme }) => theme.light};
+  }
+  input:focus::placeholder {
+    color: ${({ theme }) => theme.lighter};
+  }
+  input:focus {
+    color: ${({ theme }) => theme.primary};
+    ${boxShadowLg}
   }
 
   ul,
@@ -99,7 +122,6 @@ export const GlobalStyles = styled.createGlobalStyle`
   h3 {
     font-weight: 400;
   }
-
   h4 {
     font-size: 1.1rem;
     font-weight: 600;
@@ -109,14 +131,5 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-size: 1.05rem;
     font-weight: 400;
     color: ${({ theme }) => theme.primary};
-  }
-
-  .icon {
-    font-family: 'Material Symbols Sharp';
-    font-variation-settings:
-      'FILL' 0,
-      'wght' 100,
-      'GRAD' 0,
-      'opsz' 24;
   }
 `;

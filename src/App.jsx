@@ -7,6 +7,7 @@ import Container from './components/common/containers/Container';
 import Header from './components/layout/Header';
 import { useSelector } from 'react-redux';
 import Main from './components/layout/Main';
+import Input from './components/common/Input';
 
 function App() {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
@@ -16,7 +17,9 @@ function App() {
       <GlobalStyles />
       <Header />
       <Main>
-        <Container>Container component.</Container>
+        <Container>
+          <Input placeholder='Search...' />
+        </Container>
       </Main>
     </ThemeProvider>
   );

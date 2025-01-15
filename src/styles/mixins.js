@@ -15,21 +15,18 @@ export const flexAlignCenter = css`
   align-items: center;
 `;
 
-// Containers //
-export const container = css`
-  width: fit-content;
-  padding: 1em;
-  background-color: ${({ theme }) => theme.background};
-  border: 1px solid ${({ theme }) => theme.primary};
-  box-shadow: 0 0 8px ${({ theme }) => theme.primary};
-`;
-
 // Shadows //
 export const boxShadowSm = css`
-  border: 1px solid ${({ theme }) => theme.primary};
   box-shadow: 0 0 3px ${({ theme }) => theme.primary};
 `;
 export const boxShadowLg = css`
+  box-shadow: 0 0 8px ${({ theme }) => theme.primary};
+`;
+export const boxShadowSmBorder = css`
+  border: 1px solid ${({ theme }) => theme.primary};
+  box-shadow: 0 0 3px ${({ theme }) => theme.primary};
+`;
+export const boxShadowLgBorder = css`
   border: 1px solid ${({ theme }) => theme.primary};
   box-shadow: 0 0 8px ${({ theme }) => theme.primary};
 `;

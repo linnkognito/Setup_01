@@ -1,8 +1,19 @@
-function Icon({ icon = '', onClick = null }) {
+import styled from 'styled-components';
+
+const MaterialIcon = styled.span`
+  font-family: 'Material Symbols Sharp';
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' 0,
+    'opsz' 24;
+`;
+
+function Icon({ icon = '', role = 'img', ariaLabel = `${icon} icon` }) {
   return (
-    <span className='icon' onClick={onClick}>
+    <MaterialIcon role={role} aria-label={ariaLabel}>
       {icon}
-    </span>
+    </MaterialIcon>
   );
 }
 
