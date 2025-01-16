@@ -1,5 +1,5 @@
 function Button({
-  children = null,
+  children,
   value = '',
   type = 'button',
   ariaLabel = '',

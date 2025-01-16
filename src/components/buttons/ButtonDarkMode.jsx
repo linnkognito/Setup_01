@@ -6,6 +6,10 @@ import Icon from '../common/Icon';
 
 const StyledButton = styled.button`
   font-size: 1.2rem;
+  color: ${({ theme }) => theme.primary};
+  background-color: ${({ theme }) => theme.background};
+  /* background-color: transparent; */
+  box-shadow: none;
 `;
 
 function ButtonDarkMode() {

@@ -4,7 +4,6 @@ import {
   boxShadowLg,
   marginBase,
   boxShadowLgBorder,
-  boxShadowSmBorder,
 } from './mixins';
 
 const styled = { createGlobalStyle };
@@ -28,10 +27,11 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
 
   body {
-    font-family: 'Offside', sans-serif;
+    font-family: 'Questrial', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5;
+    letter-spacing: 0.007em;
     color: ${({ theme }) => theme.text};
     overflow-x: hidden;
     background-color: ${({ theme }) => theme.body};
@@ -56,21 +56,25 @@ export const GlobalStyles = styled.createGlobalStyle`
     padding: 0.2em 0.4em;
     font-family: inherit;
     font-size: inherit;
-    color: inherit;
-    background: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.secondary};
+    background: ${({ theme }) => theme.lighter};
     border: 1px solid ${({ theme }) => theme.primary};
     border-radius: 0.2em;
-    ${boxShadowSmBorder}
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
   }
   button:hover {
+    color: ${({ theme }) => theme.background};
     background: ${({ theme }) => theme.primary};
-    transform: scale(1.1);
   }
   button:focus {
     outline: none;
     ${boxShadowLgBorder}
+  }
+  button:active {
+    color: ${({ theme }) => theme.highlight};
+    background: ${({ theme }) => theme.lighter};
+    ${boxShadowSm}
   }
 
   input,
@@ -115,14 +119,13 @@ export const GlobalStyles = styled.createGlobalStyle`
   h1,
   h2,
   h3 {
+    font-family: 'DM Serif Display', serif;
     color: ${({ theme }) => theme.secondary};
   }
   h1 {
-    padding: 0.5em 0.5em 0.2em 0;
+    padding: 0.3em;
+    font-size: 1.7rem;
     font-weight: 400;
-    font-style: italic;
-    border-right: 1px solid ${({ theme }) => theme.light};
-    border-radius: 0;
   }
   h2 {
     font-weight: 200;

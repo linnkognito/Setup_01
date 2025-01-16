@@ -1,4 +1,4 @@
-function Footer({ children = undefined }) {
+function Footer({ children }) {
   return <footer>{children || ''}</footer>;
 }
 

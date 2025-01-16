@@ -10,6 +10,12 @@ export const flexColumn = css`
   display: flex;
   flex-direction: column;
 `;
+export const flexColumnCenter = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 export const flexAlignCenter = css`
   display: flex;
   align-items: center;
@@ -36,6 +42,21 @@ export const boxShadowLgBorder = css`
 // Bottom shadows
 export const bottomShadowLg = css`
   box-shadow: 0 2px 8px ${({ theme }) => theme.primary};
+`;
+
+// Borders
+export const borderPrimary = css`
+  border: 1px solid ${({ theme }) => theme.primary};
+`;
+
+// Border radius
+export const noBorderRadiusTop = css`
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+`;
+export const noBorderRadiusBottom = css`
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 `;
 
 // Padding & Margin //
