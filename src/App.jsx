@@ -1,19 +1,25 @@
+import { useSelector } from 'react-redux';
+
+import './fonts/fontAwesome';
+
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './styles/themes';
 import { GlobalStyles } from './styles/GlobalStyles';
 import './styles/fonts.css';
 
-import Container from './components/common/containers/Container';
 import Header from './components/layout/Header';
-import { useSelector } from 'react-redux';
 import Main from './components/layout/Main';
+import Container from './components/common/containers/Container';
 import Form from './components/common/Form';
 import Divider from './components/common/Divider';
 import Table from './components/common/Table';
+import Footer from './components/layout/Footer';
 
-const StyledWrapper = styled.div`
+const StyledAppContainer = styled.div`
   display: flex;
-  gap: 2em;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
 `;
 
 const testTable = {
@@ -51,9 +57,9 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
-      <Header />
-      <Main>
-        <StyledWrapper>
+      <StyledAppContainer>
+        <Header />
+        <Main>
           <Container width='70%'>
             <Table items={testTable} />
           </Container>
@@ -69,8 +75,10 @@ function App() {
             </p>
             <Form />
           </Container>
-        </StyledWrapper>
-      </Main>
+        </Main>
+
+        <Footer />
+      </StyledAppContainer>
     </ThemeProvider>
   );
 }

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { borderPrimary } from '../../styles/mixins';
-import Wrapper from './containers/Wrapper';
 
 const StyledActionbar = styled.div`
   display: flex;
@@ -16,7 +15,7 @@ function Actionbar({ children, title = '', background = null }) {
     <StyledActionbar title={title} background={background}>
       {title && <h3>{title}</h3>}
 
-      {children && <Wrapper>{children}</Wrapper>}
+      {children && <div>{children}</div>}
     </StyledActionbar>
   );
 }

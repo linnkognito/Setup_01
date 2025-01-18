@@ -13,7 +13,6 @@ const StyledHeader = styled.header`
   padding: 0 1em;
   background-color: ${({ theme }) => theme.background};
   border-bottom: 1px solid ${({ theme }) => theme.primary};
-  border-radius: 0;
 `;
 
 const StyledActionbar = styled.div`

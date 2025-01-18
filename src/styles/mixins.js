@@ -39,11 +39,6 @@ export const boxShadowLgBorder = css`
   box-shadow: 0 0 8px ${({ theme }) => theme.primary};
 `;
 
-// Bottom shadows
-export const bottomShadowLg = css`
-  box-shadow: 0 2px 8px ${({ theme }) => theme.primary};
-`;
-
 // Borders
 export const borderPrimary = css`
   border: 1px solid ${({ theme }) => theme.primary};
