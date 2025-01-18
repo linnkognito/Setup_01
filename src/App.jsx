@@ -4,7 +4,6 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import './styles/fonts.css';
 
 import Container from './components/common/containers/Container';
-import Card from './components/common/containers/Card';
 import Header from './components/layout/Header';
 import { useSelector } from 'react-redux';
 import Main from './components/layout/Main';
@@ -24,16 +23,17 @@ function App() {
       <Header />
       <Main>
         <StyledWrapper>
-          <Container width='70%'>
-            <Form />
-          </Container>
+          <Container width='70%'></Container>
 
           <Container width='30%'>
-            <h3>Another container</h3>
-            <Card>
-              Some content for this little card. And some more just to see what
-              happens if the text is longer.
-            </Card>
+            <h2>Another container</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <Form />
           </Container>
         </StyledWrapper>
       </Main>

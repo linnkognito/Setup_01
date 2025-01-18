@@ -13,10 +13,11 @@ const FormGroup = styled.div`
   display: flex;
   gap: 0.5em;
   justify-content: start;
-  align-items: baseline;
+  align-items: center;
   width: 100%;
   max-width: 280px;
   margin: 0.5em 0;
+  font-size: 0.9rem;
 `;
 
 const BoxInput = styled.input`

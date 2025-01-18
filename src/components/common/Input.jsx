@@ -28,6 +28,7 @@ function Input({
   required = false,
   autoComplete = 'on',
   ariaLabel = undefined,
+  fontSize = '1rem',
   label = null,
   ...props
 }) {
@@ -63,6 +64,7 @@ function Input({
           required={required}
           autoComplete={autoComplete}
           aria-label={ariaLabel}
+          fontSize={fontSize}
           label={label}
           {...props}
         />

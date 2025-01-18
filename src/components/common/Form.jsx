@@ -7,18 +7,14 @@ import {
 import Input from './Input';
 import Button from '../buttons/Button';
 
-const FormWrapper = styled.div`
-  padding: 1em;
-  width: 100%;
-`;
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: ${({ width }) => width};
-  min-width: ${({ minWidth }) => minWidth || '50%'};
-  max-width: ${({ maxWidth }) => maxWidth || '80%'};
+  min-width: ${({ minWidth }) => minWidth};
+  max-width: ${({ maxWidth }) => maxWidth};
   padding: 1em;
   ${borderPrimary}
 `;
@@ -35,7 +31,7 @@ const StyledHeading = styled.h2`
   ${borderBottom}
 `;
 
-const form = [
+const testForm = [
   {
     type: 'text',
     label: 'first name',
@@ -48,15 +44,15 @@ const form = [
     type: 'text',
     label: 'last name',
     name: 'surname',
-    placeholder: 'First name',
+    placeholder: 'Last name',
     required: true,
     ariaLabel: 'First name',
   },
   {
-    type: 'text',
-    label: 'last name',
-    name: 'surname',
-    placeholder: 'First name',
+    type: 'email',
+    label: 'email',
+    name: 'email',
+    placeholder: '123@email.com',
     required: true,
     ariaLabel: 'First name',
   },
@@ -71,34 +67,32 @@ const form = [
 ];
 
 function Form({
-  formItems = form,
-  width = 'fit-content',
+  formItems = testForm,
+  width = '100%',
   minWidth = '',
   maxWidth = '',
 }) {
   return (
-    <FormWrapper>
-      <StyledForm width={width} minWidth={minWidth} maxWidth={maxWidth}>
-        <StyledHeading>Submit form</StyledHeading>
-        {formItems.length > 0 &&
-          formItems.map((item, i) => (
-            <Input
-              key={i}
-              type={item.type}
-              label={item.label}
-              name={item.name}
-              placeholder={item.placeholder}
-              required={item.required}
-              ariaLabel={item.ariaLabel}
-            />
-          ))}
+    <StyledForm width={width} minWidth={minWidth} maxWidth={maxWidth}>
+      <StyledHeading>Submit form</StyledHeading>
+      {formItems.length > 0 &&
+        formItems.map((item, i) => (
+          <Input
+            key={i}
+            type={item.type}
+            label={item.label}
+            name={item.name}
+            placeholder={item.placeholder}
+            required={item.required}
+            ariaLabel={item.ariaLabel}
+          />
+        ))}
 
-        <StyledButtonWrapper>
-          <Button type='cancel'>Cancel</Button>
-          <Button type='submit'>Submit</Button>
-        </StyledButtonWrapper>
-      </StyledForm>
-    </FormWrapper>
+      <StyledButtonWrapper>
+        <Button type='cancel'>Cancel</Button>
+        <Button type='submit'>Submit</Button>
+      </StyledButtonWrapper>
+    </StyledForm>
   );
 }
 

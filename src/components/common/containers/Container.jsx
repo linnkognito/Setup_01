@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   gap: 1em;
   width: ${({ width }) => (width ? width : '100%')};
-  padding: 1em;
+  padding: 2em;
   background-color: ${({ theme }) => theme.background};
   ${boxShadowLg}
 `;
