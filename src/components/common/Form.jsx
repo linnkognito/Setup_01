@@ -7,6 +7,11 @@ import {
 import Input from './Input';
 import Button from '../buttons/Button';
 
+const FormBorder = styled.form`
+  padding: 1px;
+  ${borderPrimary}
+`;
+
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -16,7 +21,7 @@ const StyledForm = styled.form`
   min-width: ${({ minWidth }) => minWidth};
   max-width: ${({ maxWidth }) => maxWidth};
   padding: 1em;
-  ${borderPrimary}
+  border: 3px solid ${({ theme }) => theme.lighter};
 `;
 
 const StyledButtonWrapper = styled.div`
@@ -67,32 +72,35 @@ const testForm = [
 ];
 
 function Form({
+  title = 'Form',
   formItems = testForm,
   width = '100%',
   minWidth = '',
   maxWidth = '',
 }) {
   return (
-    <StyledForm width={width} minWidth={minWidth} maxWidth={maxWidth}>
-      <StyledHeading>Submit form</StyledHeading>
-      {formItems.length > 0 &&
-        formItems.map((item, i) => (
-          <Input
-            key={i}
-            type={item.type}
-            label={item.label}
-            name={item.name}
-            placeholder={item.placeholder}
-            required={item.required}
-            ariaLabel={item.ariaLabel}
-          />
-        ))}
+    <FormBorder>
+      <StyledForm width={width} minWidth={minWidth} maxWidth={maxWidth}>
+        <StyledHeading>{title}</StyledHeading>
+        {formItems.length > 0 &&
+          formItems.map((item, i) => (
+            <Input
+              key={i}
+              type={item.type}
+              label={item.label}
+              name={item.name}
+              placeholder={item.placeholder}
+              required={item.required}
+              ariaLabel={item.ariaLabel}
+            />
+          ))}
 
-      <StyledButtonWrapper>
-        <Button type='cancel'>Cancel</Button>
-        <Button type='submit'>Submit</Button>
-      </StyledButtonWrapper>
-    </StyledForm>
+        <StyledButtonWrapper>
+          <Button type='cancel'>Cancel</Button>
+          <Button type='submit'>Submit</Button>
+        </StyledButtonWrapper>
+      </StyledForm>
+    </FormBorder>
   );
 }
 

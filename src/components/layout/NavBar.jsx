@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from '../buttons/Button';
+import ButtonText from '../buttons/ButtonText';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -8,40 +8,26 @@ const StyledNav = styled.nav`
   gap: 1em;
 `;
 
-const StyledNavBtn = styled(Button)`
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.secondary};
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: ${({ theme }) => theme.secondary};
-    background: none;
-    border-bottom: 1px solid ${({ theme }) => theme.primary};
-    border-radius: 0;
-    transform: none;
-  }
-`;
-
-const btns = [{ value: 'home' }, { value: 'products' }, { value: 'profile' }];
+const btns = [
+  { value: 'home' },
+  { value: 'exhibitions' },
+  { value: 'museum' },
+  { value: 'member' },
+];
 
 function NavBar({ navButtons = btns }) {
   return (
     <StyledNav>
       {navButtons.length > 0 &&
         navButtons.map((btn, i) => (
-          <StyledNavBtn
+          <ButtonText
             key={i}
-            value={btn.value || ''}
-            ariaLabel={btn.ariaLabel || undefined}
-            onClick={btn.onClick || undefined}
+            ariaLabel={btn.ariaLabel || ''}
+            onClick={() => {}}
             disabled={btn.isDisabled || false}
-          />
+          >
+            {btn.value || ''}
+          </ButtonText>
         ))}
     </StyledNav>
   );

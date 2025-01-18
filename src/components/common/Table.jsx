@@ -11,8 +11,7 @@ const StyledTable = styled.table`
   border-collapse: collapse;
 `;
 const TableHead = styled.thead`
-  color: ${({ theme }) => theme.background};
-  background: ${({ theme }) => theme.secondary};
+  background: ${({ theme }) => theme.primary};
 `;
 const TableHeadRow = styled.tr`
   border-bottom: 0.2em solid ${({ theme }) => theme.background};
@@ -21,13 +20,16 @@ const TableHeader = styled.th`
   padding: 0.2em 1em;
   text-align: start;
   font-size: 1.1rem;
-  font-weight: normal;
+  font-weight: 500;
   letter-spacing: 0.1em;
+  background: ${({ theme }) =>
+    theme.name === 'lightTheme' ? theme.lighter : theme.primary};
 `;
 
 const TableBody = styled.tbody`
   tr:nth-child(odd) {
-    background: ${({ theme, cellBg }) => cellBg || theme.lighter};
+    background: ${({ theme }) =>
+      theme.name === 'lightTheme' ? theme.lightest : theme.body};
   }
 `;
 const TableData = styled.td`
@@ -36,7 +38,7 @@ const TableData = styled.td`
   text-align: start;
 `;
 
-function Table({ items = [], width = 'fit-content', cellBg = null }) {
+function Table({ items = [], width = 'fit-content' }) {
   return (
     <TableWrapper width={width}>
       <StyledTable>
@@ -48,7 +50,7 @@ function Table({ items = [], width = 'fit-content', cellBg = null }) {
           </TableHeadRow>
         </TableHead>
 
-        <TableBody cellBg={cellBg}>
+        <TableBody>
           {items.rows?.map((row, i) => (
             <tr key={row.id || i}>
               {items.columns.map((col) => (

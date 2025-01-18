@@ -4,7 +4,6 @@ import {
   boxShadowLg,
   marginBase,
   boxShadowLgBorder,
-  borderPrimary,
 } from './mixins';
 
 const styled = { createGlobalStyle };
@@ -118,11 +117,6 @@ export const GlobalStyles = styled.createGlobalStyle`
   input[type='checkbox']:active {
     box-shadow: none;
   }
-  input[type='radio']:checked,
-  input[type='checkbox']:checked {
-    text-decoration: line-through;
-    ${borderPrimary}
-  }
 
   label {
     min-width: 80px;
@@ -135,12 +129,6 @@ export const GlobalStyles = styled.createGlobalStyle`
     list-style: none;
   }
 
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-
   h1,
   h2,
   h3 {
@@ -149,14 +137,17 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
   h1 {
     padding: 0.3em;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 400;
   }
   h2 {
+    font-size: 1.9rem;
     font-weight: 200;
   }
   h3 {
+    font-size: 1.6rem;
     font-weight: 400;
+    color: ${({ theme }) => theme.secondary};
   }
   h4 {
     font-size: 1.1rem;
@@ -167,5 +158,9 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-size: 1.05rem;
     font-weight: 400;
     color: ${({ theme }) => theme.primary};
+  }
+
+  ::selection {
+    background-color: ${({ theme }) => theme.lighter};
   }
 `;

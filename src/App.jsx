@@ -12,8 +12,10 @@ import Main from './components/layout/Main';
 import Container from './components/common/containers/Container';
 import Form from './components/common/Form';
 import Divider from './components/common/Divider';
-import Table from './components/common/Table';
 import Footer from './components/layout/Footer';
+import Heading from './components/common/Heading';
+import Paragraph from './components/common/Paragraph';
+import Article from './components/articles/Article';
 
 const StyledAppContainer = styled.div`
   display: flex;
@@ -21,35 +23,42 @@ const StyledAppContainer = styled.div`
   min-width: 100vw;
   min-height: 100vh;
 `;
+const ContentWrapper = styled.div`
+  display: flex;
+  gap: 2em;
+  min-width: 100%;
+  min-height: 80%;
+  max-height: 100%;
+`;
 
-const testTable = {
-  columns: [
-    { header: 'Exhibition', key: 'name' },
-    { header: 'Museum', key: 'museum' },
-    { header: 'City', key: 'city' },
-    { header: 'Free for members', key: 'memberAccess' },
-  ],
-  rows: [
-    {
-      name: 'Postmodernism',
-      museum: 'MoMA',
-      city: 'New York City',
-      memberAccess: 'Yes',
-    },
-    {
-      name: 'The modernists',
-      museum: 'MoMA',
-      city: 'New York City',
-      memberAccess: 'Yes',
-    },
-    {
-      name: 'The modernists',
-      museum: 'MoMA',
-      city: 'New York City',
-      memberAccess: 'Yes',
-    },
-  ],
-};
+// const testTable = {
+//   columns: [
+//     { header: 'Exhibition', key: 'name' },
+//     { header: 'Museum', key: 'museum' },
+//     { header: 'City', key: 'city' },
+//     { header: 'Free for members', key: 'memberAccess' },
+//   ],
+//   rows: [
+//     {
+//       name: 'Postmodernism',
+//       museum: 'MoMA',
+//       city: 'New York City',
+//       memberAccess: 'Yes',
+//     },
+//     {
+//       name: 'The modernists',
+//       museum: 'MoMA',
+//       city: 'New York City',
+//       memberAccess: 'Yes',
+//     },
+//     {
+//       name: 'The modernists',
+//       museum: 'MoMA',
+//       city: 'New York City',
+//       memberAccess: 'Yes',
+//     },
+//   ],
+// };
 
 function App() {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
@@ -57,24 +66,40 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
+
       <StyledAppContainer>
         <Header />
-        <Main>
-          <Container width='70%'>
-            <Table items={testTable} />
-          </Container>
 
-          <Container width='30%'>
-            <h2>Another container</h2>
-            <Divider />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <Form />
-          </Container>
+        <Main>
+          {/* Example content */}
+          <ContentWrapper>
+            <Container width='70%' height='80%'>
+              <Heading
+                type='h2'
+                text='This is a heading.'
+                borderBottom={true}
+              />
+              <Article />
+            </Container>
+
+            <Container width='30%' height='80%'>
+              <h3>Another heading.</h3>
+              <Divider />
+              <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </Paragraph>
+              <Divider margin='0 0 1em 0' />
+
+              <Form title='Newsletter' />
+              <Divider margin='1em 0' />
+              <Paragraph quote={true}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </Paragraph>
+            </Container>
+          </ContentWrapper>
+
+          {/* End of Example content */}
         </Main>
 
         <Footer />

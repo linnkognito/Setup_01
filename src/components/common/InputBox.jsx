@@ -26,9 +26,6 @@ const BoxInput = styled.input`
 
 const BoxLabel = styled.label`
   width: 100%;
-  text-decoration: ${({ checked }) => (checked ? 'line-through' : '')};
-  color: ${({ theme, checked }) => (checked ? theme.light : '')};
-  opacity: ${({ checked }) => (checked ? '0.7' : '1')};
 `;
 
 function InputBox({

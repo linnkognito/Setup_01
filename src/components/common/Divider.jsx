@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { borderBottom } from '../../styles/mixins';
 
 const StyledDivider = styled.div`
   width: ${({ width }) => width};
-  ${borderBottom}
+  margin: ${({ margin }) => margin};
+  border-bottom: 1px solid ${({ theme }) => theme.light};
 `;
 
-function Divider({ width = '100%' }) {
-  return <StyledDivider width={width} />;
+function Divider({ width = '100%', margin = '0' }) {
+  return <StyledDivider width={width} margin={margin} />;
 }
 
 export default Divider;
