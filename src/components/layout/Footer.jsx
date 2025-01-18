@@ -40,11 +40,11 @@ const SectionList = styled.ul`
 `;
 const SectionListItem = styled.li`
   font-size: 0.9rem;
+  cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.dark};
     text-decoration: underline;
-    cursor: poiner;
   }
 `;
 
@@ -75,7 +75,7 @@ function Footer() {
           <SectionList>
             <SectionListItem>Home</SectionListItem>
             <SectionListItem>Exhibitions</SectionListItem>
-            <SectionListItem>About</SectionListItem>
+            <SectionListItem>The museum</SectionListItem>
             <SectionListItem>Profile</SectionListItem>
           </SectionList>
         </FooterSection>
