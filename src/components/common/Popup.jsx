@@ -1,4 +1,4 @@
-import { flexColumn, noBorderRadiusTop } from '../../styles/mixins';
+import { flexColumn } from '../../styles/mixins';
 import styled from 'styled-components';
 import Container from './containers/Container';
 import Actionbar from './Actionbar';
@@ -22,7 +22,6 @@ const StyledPopup = styled.div`
 const StyledContainer = styled(Container)`
   flex-grow: 1;
   padding: 1em 1.2em;
-  ${noBorderRadiusTop}
 `;
 
 function Popup({

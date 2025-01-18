@@ -48,15 +48,18 @@ export const bottomShadowLg = css`
 export const borderPrimary = css`
   border: 1px solid ${({ theme }) => theme.primary};
 `;
+export const borderBottom = css`
+  border-bottom: 1px solid ${({ theme }) => theme.primary};
+`;
 
 // Border radius
-export const noBorderRadiusTop = css`
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+export const borderRadiusTop = css`
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
 `;
-export const noBorderRadiusBottom = css`
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+export const borderRadiusBottom = css`
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
 `;
 
 // Padding & Margin //

@@ -1,8 +1,4 @@
-import {
-  borderPrimary,
-  flexColumn,
-  noBorderRadiusTop,
-} from '../../styles/mixins';
+import { borderPrimary, flexColumn } from '../../styles/mixins';
 import styled from 'styled-components';
 import Wrapper from './containers/Wrapper';
 import Container from './containers/Container';
@@ -33,7 +29,6 @@ const StyledWrapper = styled(Wrapper)`
 
 const StyledContainer = styled(Container)`
   flex-grow: 1;
-  ${noBorderRadiusTop}
 `;
 
 function Modal({

@@ -4,6 +4,7 @@ import {
   boxShadowLg,
   marginBase,
   boxShadowLgBorder,
+  borderPrimary,
 } from './mixins';
 
 const styled = { createGlobalStyle };
@@ -15,7 +16,6 @@ export const GlobalStyles = styled.createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-radius: 0.2em;
   }
 
   html {
@@ -77,9 +77,9 @@ export const GlobalStyles = styled.createGlobalStyle`
     ${boxShadowSm}
   }
 
-  input,
-  textarea {
-    width: fit-content;
+  input {
+    width: 100%;
+    max-width: 250px;
     padding: 0.2em 0.3em;
     font-family: inherit;
     font-size: inherit;
@@ -100,7 +100,29 @@ export const GlobalStyles = styled.createGlobalStyle`
     color: ${({ theme }) => theme.primary};
     ${boxShadowLg}
   }
+
+  /* Radio & Checkbox */
+  input[type='radio'],
+  input[type='checkbox'] {
+    box-shadow: none;
+    background: transparent;
+  }
+  input[type='radio']:focus,
+  input[type='checkbox']:focus {
+    box-shadow: none;
+  }
+  input[type='radio']:active,
+  input[type='checkbox']:active {
+    box-shadow: none;
+  }
+  input[type='radio']:checked,
+  input[type='checkbox']:checked {
+    text-decoration: line-through;
+    ${borderPrimary}
+  }
+
   label {
+    min-width: 80px;
     font-size: inherit;
     color: ${({ theme }) => theme.secondary};
   }

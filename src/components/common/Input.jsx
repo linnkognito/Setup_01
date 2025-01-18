@@ -1,15 +1,27 @@
 import styled from 'styled-components';
-import { flexAlignCenter } from '../../styles/mixins';
+import { capitalizeFirstLetter } from '../../utils/helpers';
+import InputBox from './InputBox';
 
 const InputContainer = styled.div`
-  ${flexAlignCenter}
-  gap: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+
+const FormGroup = styled.div`
+  display: grid;
+  grid-template-columns: auto 2fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin: 0.5em;
 `;
 
 function Input({
   type = 'text',
   name = '',
-  value = null,
   placeholder = '',
   readOnly = false,
   disabled = false,
@@ -19,21 +31,42 @@ function Input({
   label = null,
   ...props
 }) {
+  const isBox = type === 'checkbox' || type === 'radio';
+
   return (
     <InputContainer>
-      {label && <label>{label}</label>}
-      <input
-        type={type}
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        readOnly={readOnly}
-        disabled={disabled}
-        required={required}
-        autoComplete={autoComplete}
-        aria-label={ariaLabel}
-        {...props}
-      />
+      {!isBox && (
+        <FormGroup>
+          {label && <label>{capitalizeFirstLetter(label)}</label>}
+
+          <input
+            type={type}
+            name={name}
+            placeholder={placeholder}
+            readOnly={readOnly}
+            disabled={disabled}
+            required={required}
+            autoComplete={autoComplete}
+            aria-label={ariaLabel}
+            {...props}
+          />
+        </FormGroup>
+      )}
+
+      {isBox && (
+        <InputBox
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          readOnly={readOnly}
+          disabled={disabled}
+          required={required}
+          autoComplete={autoComplete}
+          aria-label={ariaLabel}
+          label={label}
+          {...props}
+        />
+      )}
     </InputContainer>
   );
 }

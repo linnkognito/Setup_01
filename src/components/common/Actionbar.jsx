@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderPrimary, noBorderRadiusBottom } from '../../styles/mixins';
+import { borderPrimary } from '../../styles/mixins';
 import Wrapper from './containers/Wrapper';
 
 const StyledActionbar = styled.div`
@@ -9,7 +9,6 @@ const StyledActionbar = styled.div`
   padding: 0.2em 0.3em 0.2em 1em;
   background-color: ${({ theme, background }) => background || theme.light};
   ${borderPrimary}
-  ${noBorderRadiusBottom}
 `;
 
 function Actionbar({ children, title = '', background = null }) {

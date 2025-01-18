@@ -8,9 +8,7 @@ import Card from './components/common/containers/Card';
 import Header from './components/layout/Header';
 import { useSelector } from 'react-redux';
 import Main from './components/layout/Main';
-import Input from './components/common/Input';
-import Button from './components/buttons/Button';
-import Popup from './components/common/Popup';
+import Form from './components/common/Form';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -25,19 +23,9 @@ function App() {
       <GlobalStyles />
       <Header />
       <Main>
-        <Popup background=''>
-          Popup text content.Popup text content.Popup text content. Popup text
-          content. Popup text content. Popup text content. Popup text content.
-          Popup text content. Popup text content. Popup text content. Popup text
-          content.
-        </Popup>
         <StyledWrapper>
           <Container width='70%'>
-            <h2>Lorem ipsum</h2>
-            Lorem ipsum dolor sit amet.
-            <Input placeholder='Search...' />
-            <Button value='Button' />
-            <Card>A card to test and see what is going on.</Card>
+            <Form />
           </Container>
 
           <Container width='30%'>
