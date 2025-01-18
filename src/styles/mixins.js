@@ -53,6 +53,9 @@ export const borderBottom = css`
 `;
 
 // Border radius
+export const borderRadius = css`
+  border-radius: 0.2em;
+`;
 export const borderRadiusTop = css`
   border-top-left-radius: 0.2em;
   border-top-right-radius: 0.2em;
