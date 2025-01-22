@@ -38,7 +38,7 @@ function Article() {
   return (
     <ArticleWrapper>
       <Image
-        src='../public/img/PXL_20230801_182854540.jpg'
+        src='/img/PXL_20230801_182854540.jpg'
         width='100%'
         style={{ maxWidth: '100%' }}
       />
