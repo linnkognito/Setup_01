@@ -65,48 +65,55 @@ const CopyRight = styled.p`
   color: ${({ theme }) => theme.primary};
 `;
 
+const links = [
+  {
+    id: 'sitemap',
+    name: 'Site map',
+    links: ['Home', 'Exhibitions', 'The museum', 'Profile'],
+  },
+  {
+    id: 'visit',
+    name: 'Visit us',
+    links: ['Admission', 'Membership', 'Directions', 'Museum map'],
+  },
+  {
+    id: 'contact',
+    name: 'Contact',
+    links: ['Call', 'Fax', 'Email', 'Address'],
+  },
+];
+
+const icons = [
+  { link: 'https://www.instagram.com', icon: 'instagram' },
+  { link: 'https://www.facebook.com', icon: 'facebook' },
+  { link: 'https://www.twitter.com', icon: 'twitter' },
+  { link: 'https://www.tiktok.com', icon: 'tiktok' },
+];
+
 function Footer() {
   return (
     <StyledFooter>
       <Sections>
-        <Logo>Setup</Logo>
-        <FooterSection>
-          <SectionHeading>Site map</SectionHeading>
-          <SectionList>
-            <SectionListItem>Home</SectionListItem>
-            <SectionListItem>Exhibitions</SectionListItem>
-            <SectionListItem>The museum</SectionListItem>
-            <SectionListItem>Profile</SectionListItem>
-          </SectionList>
-        </FooterSection>
+        <Logo>Museum</Logo>
 
-        <FooterSection>
-          <SectionHeading>Visit us</SectionHeading>
-          <SectionList>
-            <SectionListItem>Admission</SectionListItem>
-            <SectionListItem>Membership</SectionListItem>
-            <SectionListItem>Directions</SectionListItem>
-            <SectionListItem>Museum map</SectionListItem>
-          </SectionList>
-        </FooterSection>
-
-        <FooterSection>
-          <SectionHeading>Contact</SectionHeading>
-          <SectionList>
-            <SectionListItem>Call</SectionListItem>
-            <SectionListItem>Fax</SectionListItem>
-            <SectionListItem>Email</SectionListItem>
-            <SectionListItem>Address</SectionListItem>
-          </SectionList>
-        </FooterSection>
+        {links.map((section) => (
+          <FooterSection key={section.id}>
+            <SectionHeading>{section.name}</SectionHeading>
+            <SectionList>
+              {section.links.map((link) => (
+                <SectionListItem key={link}>{link}</SectionListItem>
+              ))}
+            </SectionList>
+          </FooterSection>
+        ))}
 
         <FooterSection>
           <SectionHeading>Social media</SectionHeading>
           <FooterLinks>
-            <IconLink link='https://www.instagram.com' icon='instagram' />
-            <IconLink link='https://www.facebook.com' icon='facebook' />
-            <IconLink link='https://www.twitter.com' icon='twitter' />
-            <IconLink link='https://www.tiktok.com' icon='tiktok' />
+            {icons &&
+              icons.map((icon) => (
+                <IconLink key={icon.icon} link={icon.link} icon={icon.icon} />
+              ))}
           </FooterLinks>
         </FooterSection>
       </Sections>

@@ -24,17 +24,15 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
-
       <StyledAppContainer>
         <Header />
-
         <Main>
           <ExampleContent />
         </Main>
-
         <Footer />
       </StyledAppContainer>
     </ThemeProvider>
   );
 }
+
 export default App;

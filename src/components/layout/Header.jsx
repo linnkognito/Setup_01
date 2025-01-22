@@ -30,7 +30,7 @@ function Header() {
   return (
     <StyledHeader>
       <NavBar />
-      <h1>Setup</h1>
+      <h1>Museum</h1>
       <StyledActionbar>
         <StyledSearchbar
           type='search'
