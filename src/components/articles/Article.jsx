@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import exampleImage from '../../../public/img/PXL_20230801_182854540.jpg';
+
 import Image from '../common/Image';
 import Heading from '../common/Heading';
 import Divider from '../common/Divider';
@@ -37,11 +39,7 @@ const LinkContainer = styled.div`
 function Article() {
   return (
     <ArticleWrapper>
-      <Image
-        src='/img/PXL_20230801_182854540.jpg'
-        width='100%'
-        style={{ maxWidth: '100%' }}
-      />
+      <Image src={exampleImage} width='100%' style={{ maxWidth: '100%' }} />
       <TextContent>
         <Heading type='h3' text='Article.' />
         <Divider />
