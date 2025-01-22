@@ -38,6 +38,36 @@ const TableData = styled.td`
   text-align: start;
 `;
 
+/* The testTable below is for testing purposes, can be deleted */
+// const testTable = {
+//   columns: [
+//     { header: 'Exhibition', key: 'name' },
+//     { header: 'Museum', key: 'museum' },
+//     { header: 'City', key: 'city' },
+//     { header: 'Free for members', key: 'memberAccess' },
+//   ],
+//   rows: [
+//     {
+//       name: 'Postmodernism',
+//       museum: 'MoMA',
+//       city: 'New York City',
+//       memberAccess: 'Yes',
+//     },
+//     {
+//       name: 'The modernists',
+//       museum: 'MoMA',
+//       city: 'New York City',
+//       memberAccess: 'Yes',
+//     },
+//     {
+//       name: 'The modernists',
+//       museum: 'MoMA',
+//       city: 'New York City',
+//       memberAccess: 'Yes',
+//     },
+//   ],
+// };
+
 function Table({ items = [], width = 'fit-content' }) {
   return (
     <TableWrapper width={width}>

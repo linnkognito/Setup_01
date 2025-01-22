@@ -3,6 +3,7 @@ import { borderPrimary } from '../../styles/mixins';
 
 const SyledImage = styled.img`
   width: 100%;
+  height: auto;
   padding: 2px;
   border: 3px solid ${({ theme }) => theme.lighter};
 `;
@@ -10,6 +11,7 @@ const SyledImage = styled.img`
 const Border = styled.div`
   display: flex;
   width: ${({ width }) => width};
+  height: auto;
   padding: ${({ border }) => (border ? '2px' : 0)};
   ${({ border }) => (border ? borderPrimary : '')};
 `;

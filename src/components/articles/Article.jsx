@@ -7,14 +7,26 @@ import Link from '../common/Link';
 import ButtonText from '../buttons/ButtonText';
 
 const ArticleWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
   gap: 3em;
+
+  @media (max-width: 1243px) {
+    grid-template-columns: 1fr;
+  }
 `;
 const TextContent = styled.div`
-  max-width: 50%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  width: 100%;
+  max-width: 100%;
+
+  @media (max-width: 1243px) {
+    max-width: 100%;
+  }
 `;
 const LinkContainer = styled.div`
   display: flex;
@@ -25,7 +37,11 @@ const LinkContainer = styled.div`
 function Article() {
   return (
     <ArticleWrapper>
-      <Image src='../public/img/PXL_20230801_182854540.jpg' width='50%' />
+      <Image
+        src='../public/img/PXL_20230801_182854540.jpg'
+        width='100%'
+        style={{ maxWidth: '100%' }}
+      />
       <TextContent>
         <Heading type='h3' text='Article.' />
         <Divider />
